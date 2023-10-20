@@ -2,37 +2,229 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ------- LANDING PAGE FONT ------- */
+
+.playfair-font {
+  font-family: 'Playfair Display', serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.montserrat-font {
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* -------LANDING PAGE REUSABLE STYLES ------- */
+
+.margin-top-bottom {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.margin-space-top {
+  margin-top: 5px;
+}
+
+.flex-display {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.image-fluid {
+  background-repeat: no-repeat;
+  max-width: 100%; /* Ensure images don't exceed the container width */
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.margin-right {
+  margin-right: 5%;
+}
+
+.spacing-image {
+  padding: 10px;
+  margin: 10px;
+    flex: 1; /* Distribute available space equally between child elements */
+    margin: 5px; /* Add space around each image */
+}
+
+.break-line  {
+  border-top: 1px solid rgb(141, 138, 138); 
+  border-bottom: 1px solid rgb(141, 138, 138); 
+  padding: 10px; 
+  opacity: 0.7;
+}
+
+.font-small {
+  font-size: x-small;
+}
+
+.font-medium {
+  font-size: medium;
+}
+
+
+/* ------- LANDING PAGE CONTAINER ------- */
+
+.landing-page-container {
+  background-image: url(/public/images/white-wood.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  padding: auto;
+ 
+}
+
+/* ------- LANDING PAGE HEADER ------- */
+
+
+.header-container {
+  width: 100%;
+  padding: 0px;
+  top: 0;
+  left: 0;
+  margin: 0px;
+  border-top: 1px;
+  border-width: 1px;
+  border-color: black;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .header-container ul {
+    padding: 0px;
   }
+  
+  .header-list {
+    list-style: none;
+  
+  }
+  
+  .header-items {
+display: flex;
+align-items: center;
+    font-size: small;
+  padding: 10px; 
+height: 20px;
+margin-top: 50px;
+  }
+  
+  .header-items a {
+    margin: auto;
+    cursor:pointer;
+
+  }
+  
+  /* ------- LANDING PAGE IMAGES ------- */
+  
+  
+  .top-images {
+    display: flex; /* Create a flex container */
+  justify-content: space-between; 
+  }
+
+/* ------- LANDING PAGE FOOTER ------- */
+.landing-page-footer-container {
+  bottom: 0px;
+  height: 25%;
+  width: 100%;
+  left: 0;
+  margin: 0px;
+  padding: 10px;
+  background-image: url(/public/images/Aba-wood-1.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.footer-list {
+
+  padding-left: 0;
+  color: aliceblue;
+  
+}
+
+.footer-list li {
+  padding: 20px;
+}
+
+.landing-page-footer-container ul {
+  list-style-type: none;
+}
+
+.hours-locations-container {
+margin-left: 50%;
+  column-count: 2;
+  column-gap: 0;
+  color: aliceblue;
+}
+
+.hours-locations-container ul {
+padding-left: 0;
+}
+
+/* ------- LANDING PAGE LOGO ------- */
+
+
+.aba-logo-image {
+height: 100px;
+width: 100px;
+
+}
+
+
+/* ------- LANDING PAGE MEDIA QUERIES ---------- */
+
+/* LANDING PAGE HEADER MEDIA QUERIES */
+
+@media only screen and (max-width: 786px) {
+  .header-container {
+    padding: 0;
+
+  }
+  .header-items a {
+    font-size: small;
+    padding: 0px;
+  }
+  .aba-logo-image {
+    height: 40px;
+    width: 40px;
+  }
+
+  .header-list {
+    padding: 0px;
+    margin: auto;
+  }
+
+  .header-items {
+    padding: 5px;
+
+  }
+
+
+}
+
+  /* LANDING PAGE FOOTER MEDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+  .landing-page-footer-container {
+    height: 25%;
+    padding: 0;
+  }
+  .hours-locations-container {
+    font-size: x-small;
+    margin-left: 0;
+    
+  }
+
+  .hours-locations-container p {
+    font-size: xx-small;
+  }
+  .flex-display {
+    display: flex;
+    justify-content: center;
+  }
+  .footer-list {
+    font-size: x-small;
+    padding-top: 19.9%;
+  }
+
+  .footer-list li {
+    padding: 1px;
+  }
+
 }
