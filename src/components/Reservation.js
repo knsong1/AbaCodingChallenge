@@ -9,13 +9,24 @@ function Reservation() {
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
+  const [pickDate, setPickDate] = useState('');
+  const [time, setTime] = useState('');
+  const [guests, setGuests] = useState('');
 
   const handleFormSubmit = () => {
-    if (email) {
+    if ((email, name, phoneNumber)) {
       setConfirmationPopup(true);
       setButtonPopup(false);
     } else {
-      alert('Please fill out all fields.');
+      alert('Please fill out email, name, and phone number.');
+    }
+  };
+
+  const handleFindTable = () => {
+    if ((pickDate, time, guests)) {
+      setButtonPopup(true);
+    } else {
+      alert('Please fill out date, time, and guests');
     }
   };
 
@@ -24,58 +35,63 @@ function Reservation() {
       setName('');
       setEmail('');
       setPhoneNumber('');
+      setPickDate('');
+      setTime('');
+      setGuests('');
       setConfirmationPopup(false);
     }
   };
 
-  const [showConfetti, setShowConfetti] = useState(false);
-
-  // Function to trigger the confetti animation
-  const celebrateSubmission = () => {
-    setShowConfetti(true);
-
-    // Reset the confetti after a few seconds (you can adjust the timing)
-    setTimeout(() => {
-      setShowConfetti(false);
-    }, 3000); // 3000 milliseconds (3 seconds)
-  };
-
   return (
     <div className="landing-page-reservation-form-container playfair-font">
-      <div className="top-line"></div>
-
+      <hr className="divider"></hr>
       <p className="font-large">MAKE A RESERVATION</p>
       <form className="landing-page-reservation-form flex-display">
         <div className="full-border ">
           <label></label>
-          <input type="date" placeholder="Date" required />
-        </div>
-        <div className="full-border">
-          <label></label>
-          <input type="time" placeholder="Time" required />
+          <input
+            value={pickDate}
+            onChange={(e) => setPickDate(e.target.value)}
+            type="date"
+            placeholder="Date"
+            required
+          />
         </div>
         <div className="full-border">
           <label></label>
           <input
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            type="time"
+            placeholder="Time"
+            required
+          />
+        </div>
+        <div className="full-border">
+          <label></label>
+          <input
+            onChange={(e) => setGuests(e.target.value)}
             type="number"
             placeholder="Number of Guests"
             min="2"
             max="6"
+            value={guests}
             required
           />
         </div>
         <div className="full-border">
           <label></label>
           <input
-            className="landing-page-reservation-form-button end-of-form-border"
+            className="landing-page-reservation-form-button "
             type="button"
             value="Find Table"
-            onClick={() => setButtonPopup(true)}
+            onClick={() => handleFindTable()}
             required
           />
         </div>
       </form>
-      <div className="full-border end-of-form-border pop-up-container">
+      <hr className="divider"></hr>
+      <div className=" pop-up-container">
         <Popup trigger={buttonPopup}>
           <button onClick={() => setButtonPopup(false)} className="close-btn">
             X

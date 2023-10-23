@@ -15,7 +15,6 @@
 .display-block {
 display: block;
 }
-
   
   /* ------- LANDING PAGE IMAGES ------- */
   
@@ -32,7 +31,7 @@ display: block;
 
   .up-47-1 {
     width: 100%;
-    margin-top: -50%;
+    margin: auto;
   }
 
   .up-47-2 {
@@ -43,28 +42,37 @@ display: block;
 
   .image-fluid {
     max-width: 100%; 
-    height: auto;
+    height: 500px;
    
   }
 
   .spacing-image {
     margin: 10px;
-      flex: 1; 
       margin: 5px;
+      overflow: hidden;
   }
 
   .group-dining-image {
-    overflow:hidden;
     display: flex;
     align-items: center;
+
+  }
+
+  .group-dining-image-inner {
+  
+    object-fit: fill;
+    justify-content: center;
+    display: flex;
+    position: relative;
+
   }
 
   .aba-logo-image {
     height: 100px;
     width: 100px;
     
-    
     }
+
 /* -------LANDING PAGE REUSABLE STYLES ------- */
 
 .margin-top-bottom {
@@ -94,12 +102,19 @@ display: block;
   border-bottom: 1px solid rgb(141, 138, 138); 
   padding: 10px; 
   opacity: 0.7;
+
 }
 
 .top-line {
+  border-top: 1px solid rgb(141, 138, 138); 
   border-bottom: 1px solid rgb(141, 138, 138); 
   padding: 10px; 
+  margin: 40px;
+}
 
+.divider {
+  border: 0.01 solid #000; /* You can adjust the border style, color, and thickness as needed */
+  margin: 40px;
 }
 
 .bottom-line {
@@ -208,6 +223,20 @@ margin-top: 5%;
     width: 25vh;
   }
 
+  .landing-page-button {
+    background-color: #10213e;
+    border: none;
+    outline: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    height: 100%;
+    width: 25vh;
+    padding: 10px;
+
+  }
+
   .landing-page-reservation-form 
 
     /* LANDING PAGE GROUP DINING */
@@ -236,7 +265,6 @@ margin-top: 5%;
 }
 
 .footer-list {
-
   padding-left: 0;
   color: aliceblue;
   
@@ -244,22 +272,33 @@ margin-top: 5%;
 
 .footer-list li {
   padding: 20px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .landing-page-footer-container ul {
   list-style-type: none;
  margin-top: 5%;
+ margin-bottom: 0px;
 }
 
+
 .hours-locations-container {
-margin-left: 50%;
+  margin-left: 50%;
+  margin-bottom: 10%;
   column-count: 2;
   column-gap: 0;
   color: aliceblue;
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .hours-locations-container ul {
 padding-left: 0;
+}
+
+.contact-info {
+  color: white;
 }
 
 /* ------- LANDING PAGE LOGO ------- */
@@ -343,12 +382,20 @@ right: 15px;
 
   }
 
+  .top-line {
+    margin: 20px;
+  }
+
+  .divider {
+    margin: 20px;
+  }
+
 
 }
 
 
 
-
+/* LANDING PAGE FONT */
 
 @media only screen and (max-width: 768px) {
   .font-large  {
@@ -362,6 +409,27 @@ right: 15px;
   }
 
 }
+
+/* LANDING PAGE BUTTONS */
+
+
+@media only screen and (max-width: 768px) {
+  .landing-page-button {
+
+    background-color: #10213e;
+    border: none;
+    outline: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    height: 100%;
+    width: 20vh;
+    padding: 10px;
+  }
+
+}
+
 
   /* LANDING PAGE FOOTER MEDIA QUERIES */
 
@@ -391,6 +459,14 @@ right: 15px;
 
   .footer-list li {
     padding: 5px;
+  }
+
+  .group-dining-image {
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    width: 200%;
+
   }
 
 }
