@@ -11,6 +11,11 @@ function AbaHeader() {
               src="/images/Aba-Logo.png"
               alt="Aba Logo"
             />
+            <img
+              className="aba-logo-image-2 flex-display"
+              src="/images/Aba-Logo.png"
+              alt="Aba Logo"
+            />
           </li>
           <li className="header-items flex-display break-line ">
             <a>RESERVE</a>
