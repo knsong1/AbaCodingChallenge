@@ -21,6 +21,16 @@ function AbaFooter() {
                 Sun 10am - 9pm
               </p>
             </li>
+
+            <li className="">
+              <a>
+                <h3 className="playfair-font">CONTACT</h3>
+              </a>
+              <a>
+                <h3 className="playfair-font">NEWSLETTER</h3>
+              </a>
+            </li>
+
             <li>
               <h3 className="playfair-font">LOCATIONS</h3>
               <p className="margin-top-bottom montserrat-font font-medium">

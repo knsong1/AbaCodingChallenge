@@ -18,8 +18,6 @@ const LandingPage = () => {
 
       <Reservation></Reservation>
 
-      <div className="top-line"></div>
-
       <div className="montserrat-font top-line group-dining-container">
         <div className="flex-display group-dining-content-container">
           <div className="display-block">
@@ -34,21 +32,25 @@ const LandingPage = () => {
               </p>
             </div>
             <div>
-              <button className="landing-page-reservation-form-button">
+              <button className="playfair-font landing-page-button font-small">
                 PLAN YOUR PARTY
               </button>
             </div>
           </div>
 
           <div className="group-dining-image">
-            <img className="image-fluid " src="/images/up-35.jpg"></img>
+            <div className="group-dining-image-inner">
+              <img className="image-fluid " src="/images/up-35.jpg"></img>
+            </div>
           </div>
         </div>
       </div>
       <div className="montserrat-font top-line group-dining-container">
         <div className="flex-display group-dining-content-container">
           <div className="group-dining-image">
-            <img className="image-fluid " src="/images/up-35.jpg"></img>
+            <div className="group-dining-image-inner">
+              <img className="image-fluid " src="/images/up-35.jpg"></img>
+            </div>
           </div>
           <div className="display-block">
             <div>
@@ -62,13 +64,14 @@ const LandingPage = () => {
               </p>
             </div>
             <div>
-              <button className="landing-page-reservation-form-button">
+              <button className="playfair-font landing-page-button font-small">
                 LEARN MORE
               </button>
             </div>
           </div>
         </div>
       </div>
+
       <div className="montserrat-font top-line group-dining-container">
         <div className="flex-display group-dining-content-container">
           <div className="display-block">
@@ -85,7 +88,9 @@ const LandingPage = () => {
           </div>
 
           <div className="group-dining-image">
-            <img className="image-fluid " src="/images/up-42.jpg"></img>
+            <div className="group-dining-image-inner">
+              <img className="image-fluid " src="/images/up-42.jpg"></img>
+            </div>
           </div>
         </div>
       </div>
