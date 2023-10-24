@@ -23,16 +23,18 @@ function AbaFooter() {
             </li>
 
             <li className="">
-              <a>
+              <a href="/contact">
                 <h3 className="playfair-font">CONTACT</h3>
               </a>
-              <a>
+              <a href="/newsletter">
                 <h3 className="playfair-font">NEWSLETTER</h3>
               </a>
             </li>
 
             <li>
-              <h3 className="playfair-font">LOCATIONS</h3>
+              <a href="/https://maps.app.goo.gl/KjLMwxqEtmN4DBTDA">
+                <h3 className="playfair-font">LOCATIONS</h3>
+              </a>
               <p className="margin-top-bottom montserrat-font font-medium">
                 302 N Green Street,
               </p>
@@ -50,12 +52,24 @@ function AbaFooter() {
         </div>
 
         <ul className="footer-list playfair-font flex-display">
-          <li className="font-small">FREQUENT DINER</li>
-          <li className="font-small">GIFT CARDS</li>
-          <li className="font-small">EMPLOYMENT</li>
-          <li className="font-small">LEYE.COM</li>
-          <li className="font-small">TERMS OF USE</li>
-          <li className="font-small">PRIVACY POLICY</li>
+          <li className="font-small">
+            <a href="/frequent-diner">FREQUENT DINER</a>
+          </li>
+          <li className="font-small">
+            <a href="/gift-cards">GIFT CARDS</a>{' '}
+          </li>
+          <li className="font-small">
+            <a href="/employment">EMPLOYMENT </a>
+          </li>
+          <li className="font-small">
+            <a href="/leye.com"> LEYE.COM</a>
+          </li>
+          <li className="font-small">
+            <a href="/terms"> TERMS OF USE</a>
+          </li>
+          <li className="font-small">
+            <a href="/privacy-policy"> PRIVACY POLICY</a>
+          </li>
         </ul>
       </div>
     </footer>

@@ -5,7 +5,7 @@ function AbaHeader() {
     <header>
       <div className="header-container playfair-font">
         <ul className="header-list flex-display">
-          <li className="header-items margin-right ">
+          <li className="header-items margin-right">
             <img
               className="aba-logo-image flex-display"
               src="/images/Aba-Logo.png"
@@ -18,19 +18,19 @@ function AbaHeader() {
             />
           </li>
           <li className="header-items flex-display break-line ">
-            <a>RESERVE</a>
+            <a href="#section1">RESERVE</a>
           </li>
           <li className="header-items flex-display break-line ">
-            <a>MENU</a>
+            <a href="/Menu">MENU</a>
           </li>
           <li className="header-items flex-display break-line ">
-            <a>GROUP DINING</a>
+            <a href="#section2">GROUP DINING</a>
           </li>
           <li className="header-items flex-display break-line ">
-            <a> EVENTS</a>
+            <a href="#section4"> EVENTS</a>
           </li>
           <li className="header-items flex-display break-line ">
-            <a>TEAM </a>
+            <a href="/Team">TEAM </a>
           </li>
         </ul>
       </div>
