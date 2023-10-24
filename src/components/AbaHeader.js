@@ -21,16 +21,16 @@ function AbaHeader() {
             <a href="#section1">RESERVE</a>
           </li>
           <li className="header-items flex-display break-line ">
-            <a href="/Menu">MENU</a>
+            <a href="/menu">MENU</a>
           </li>
           <li className="header-items flex-display break-line ">
             <a href="#section2">GROUP DINING</a>
           </li>
           <li className="header-items flex-display break-line ">
-            <a href="#section4"> EVENTS</a>
+            <a href="/events"> EVENTS</a>
           </li>
           <li className="header-items flex-display break-line ">
-            <a href="/Team">TEAM </a>
+            <a href="/team">TEAM </a>
           </li>
         </ul>
       </div>
