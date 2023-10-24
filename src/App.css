@@ -14,8 +14,14 @@
 
 .display-block {
 display: block;
-padding: 20px;
+padding-left: 30px;
 }
+
+.inline-block {
+  display: inline-block;
+padding: 0px;
+}
+
   
   /* ------- LANDING PAGE IMAGES ------- */
   
@@ -138,11 +144,12 @@ a {
 .bottom-line {
   border-bottom: 1px solid rgb(141, 138, 138); 
   padding: 10px; 
-  opacity: 0.7;
+  margin: 10%;
+
 }
 
 .font-small {
-  font-size: x-small;
+  font-size: small;
 }
 
 .font-medium {
@@ -150,7 +157,8 @@ a {
 }
 
 .font-large {
-  font-size: x-large;
+  font-size: large;
+
 }
 
 .full-border {
@@ -240,14 +248,37 @@ margin-top: 5%;
 
   .landing-page-reservation-form {
     padding-bottom: 15px; 
-
     max-width: 100%;
   }
 
   .landing-page-reservation-form input {
-
+width: 250px;
     border-style: none;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+ 
   }
+
+  .landing-page-reservation-form select {
+ 
+        border-style: none;
+        text-align: center;
+        padding: auto;
+        margin: auto;
+     
+      }
+
+
+
+  .counter {
+    width: 300px;
+    text-align: center;
+  }
+
+
+
+
 
   .landing-page-reservation-form-button {
     background-color: #10213e;
@@ -275,12 +306,15 @@ margin-top: 5%;
 
   }
 
-  .landing-page-reservation-form 
 
     /* LANDING PAGE GROUP DINING */
 
-  .group-dining-container {
+  .group-dining-container  {
     height: 200px;
+  }
+
+  .group-dining-container {
+    margin-top: 10%;
   }
 
 
@@ -297,9 +331,17 @@ margin-top: 5%;
   left: 0;
   margin: 0px;
   padding: 10px;
+
+ 
+}
+
+
+
+.landing-page-footer-background  {
   background-image: url(/public/images/Aba-wood-1.jpg);
-  background-repeat: no-repeat;
-  background-size:cover;
+  background-position: right;
+  background-attachment: fixed;
+
 }
 
 .footer-list a {
@@ -326,6 +368,15 @@ margin-top: 5%;
   list-style-type: none;
  margin-top: 5%;
  margin-bottom: 0px;
+ padding-left: 0px;
+}
+
+.locations {
+  padding-top: 1px;
+}
+
+.phone-number {
+  padding-top: 20px;
 }
   
 
@@ -340,6 +391,7 @@ margin-top: 5%;
   color: aliceblue;
   flex-direction: column; 
   align-items: center; 
+  text-align: left;
 }
 
 .hours-locations-container ul {
@@ -383,12 +435,11 @@ padding-left: 0;
 
 .popup-inner {
   position: relative;
-  padding: 32px;
+  padding: 100px;
   width: 20%;
   max-width: 600px;
   background-color: white;
-
-  border-radius: 5%;
+  border-radius: 10px;
 }
 
 .popup-inner .close-btn {
@@ -490,7 +541,7 @@ right: 15px;
   }
   .hours-locations-container {
     font-size: x-small;
-    margin-left: 0;
+
     
   }
 
@@ -503,8 +554,6 @@ right: 15px;
   }
   .footer-list {
     font-size: x-small;
-    padding-top: 19.9%;
-    
   }
 
   .group-dining-content-container .flex-display {
@@ -518,15 +567,14 @@ right: 15px;
   .group-dining-image-inner {
     justify-content: center;
     display: flex;
-    position: relative;
+    position: static;
+    height: 300px;
+    width: 400px;
   
   }
 
 
-.display-block {
-  display: block;
-  padding: 0px;
-  }
+
 
   .top-images {
 
@@ -534,13 +582,29 @@ right: 15px;
 
   }
 
+  .landing-page-reservation-form input {
+        width: 88px;
+        border-style: none;
+        text-align: center;
+        padding: 1px;
+        margin: auto;
+     
+      }
+    
+      .counter {
+        width: 90px;
+      }
 
+      .landing-page-footer-background  {
+       background-size: cover;
+      
+      }
 
 }
 
 @media only screen and  (min-width: 786px){
   .group-dining-image-inner {
-    height: 550px;
+
     width: 350px;
   }
   .top-line {
@@ -551,6 +615,7 @@ right: 15px;
   }
   .group-dining-image {
     margin: -40px -40px -40px 0px;
+    padding: 10px;
   }
 }
 

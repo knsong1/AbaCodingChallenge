@@ -22,16 +22,17 @@ function AbaFooter() {
               </p>
             </li>
 
-            <li className="">
+            <li className="inline-block">
               <a href="/contact">
                 <h3 className="playfair-font">CONTACT</h3>
               </a>
+
               <a href="/newsletter">
                 <h3 className="playfair-font">NEWSLETTER</h3>
               </a>
             </li>
 
-            <li>
+            <li className="locations">
               <a href="/https://maps.app.goo.gl/KjLMwxqEtmN4DBTDA">
                 <h3 className="playfair-font">LOCATIONS</h3>
               </a>
@@ -42,9 +43,9 @@ function AbaFooter() {
                 3rd Floor
               </p>
               <p className="margin-top-bottom montserrat-font font-medium">
-                Chicago,IL 60607
+                Chicago, IL 60607
               </p>
-              <p className="margin-top-bottom montserrat-font font-medium">
+              <p className="margin-top-bottom montserrat-font font-medium phone-number">
                 773-645-1400
               </p>
             </li>
@@ -56,7 +57,7 @@ function AbaFooter() {
             <a href="/frequent-diner">FREQUENT DINER</a>
           </li>
           <li className="font-small">
-            <a href="/gift-cards">GIFT CARDS</a>{' '}
+            <a href="/gift-cards">GIFT CARDS</a>
           </li>
           <li className="font-small">
             <a href="/employment">EMPLOYMENT </a>

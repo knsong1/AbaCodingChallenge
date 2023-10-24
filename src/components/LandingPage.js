@@ -4,6 +4,7 @@ import AbaHeader from './AbaHeader';
 import Reservation from './Reservation';
 
 const LandingPage = () => {
+  const restaurantName = 'Aba';
   return (
     <div className="landing-page-container">
       <AbaHeader></AbaHeader>
@@ -24,10 +25,11 @@ const LandingPage = () => {
         </div>
       </div>
       <section id="section1">
+        <hr className="divider"></hr>
         <Reservation></Reservation>
       </section>
 
-      <div className="montserrat-font top-line group-dining-container">
+      <div className="montserrat-font bottom-line group-dining-container">
         <div className="flex-display group-dining-content-container">
           <section id="section2">
             <div className="display-block">
@@ -75,15 +77,17 @@ const LandingPage = () => {
             </div>
             <div className="display-block">
               <div>
-                <p className="font-large playfair-font">WINE DINER</p>
+                <p className="font-large playfair-font">WINE DINNER</p>
               </div>
               <div>
                 <p className="font-medium">
-                  Celebrating an anniversary, birthday, or new promotion at
-                  work. We provide multiple services and dishes to make your day
-                  special.
+                  At {restaurantName}, we invite you to elevate your dining
+                  experience and embark on a journey of taste, culture, and
+                  refinement.
                 </p>
+                <p>July 14, 2023 at 10:00pm</p>
               </div>
+
               <div>
                 <button className="playfair-font landing-page-button font-small">
                   LEARN MORE
@@ -123,7 +127,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <div className="bottom-line"></div>
       <section id="section4">
         <AbaFooter></AbaFooter>
       </section>
