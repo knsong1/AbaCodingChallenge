@@ -2,8 +2,8 @@ import React from 'react';
 
 function AbaFooter() {
   return (
-    <footer className="landing-page-footer-background">
-      <div className="landing-page-footer-container ">
+    <footer className="footer-background">
+      <div className="footer-container ">
         <div className="hours-locations-container">
           <ul className="margin-space-top">
             <li>

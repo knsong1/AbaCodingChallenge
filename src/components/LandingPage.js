@@ -8,7 +8,7 @@ const LandingPage = () => {
   return (
     <div className="landing-page-container">
       <AbaHeader></AbaHeader>
-      <div className="top-images flex-display">
+      <div className="top-images ">
         <div className="spacing-image ">
           <img
             className="image-fluid up-47-1"
@@ -30,7 +30,7 @@ const LandingPage = () => {
       </section>
 
       <div className="montserrat-font bottom-line group-dining-container">
-        <div className="flex-display group-dining-content-container">
+        <div className="flex-display content-container">
           <section id="section2">
             <div className="display-block">
               <div>
@@ -45,14 +45,14 @@ const LandingPage = () => {
               </div>
               <div>
                 <button className="playfair-font landing-page-button font-small">
-                  PLAN YOUR PARTY
+                  <a href="/plan-your-party">PLAN YOUR PARTY</a>
                 </button>
               </div>
             </div>
           </section>
 
-          <div className="group-dining-image">
-            <div className="group-dining-image-inner ">
+          <div className="dining-image">
+            <div className="dining-image-inner ">
               <img
                 className="image-fluid image-right"
                 src="/images/up-35.jpg"
@@ -65,11 +65,11 @@ const LandingPage = () => {
 
       <section>
         <div className="montserrat-font top-line group-dining-container">
-          <div className="flex-display group-dining-content-container">
-            <div className="group-dining-image">
-              <div className=" image-left group-dining-image-inner">
+          <div className="flex-display content-container">
+            <div className="dining-image">
+              <div className="image-left dining-image-inner">
                 <img
-                  className="image-fluid "
+                  className="image-fluid"
                   alt="up-35.jpg"
                   src="/images/up-35.jpg"
                 ></img>
@@ -90,7 +90,7 @@ const LandingPage = () => {
 
               <div>
                 <button className="playfair-font landing-page-button font-small">
-                  LEARN MORE
+                  <a href="/wine-dinner">LEARN MORE</a>
                 </button>
               </div>
             </div>
@@ -100,7 +100,7 @@ const LandingPage = () => {
 
       <section id="section3">
         <div className="montserrat-font top-line group-dining-container">
-          <div className="flex-display group-dining-content-container">
+          <div className="flex-display content-container">
             <div className="display-block">
               <div>
                 <p className="font-large playfair-font">ABOUT ABA</p>
@@ -114,8 +114,8 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div className="group-dining-image">
-              <div className="group-dining-image-inner">
+            <div className="dining-image">
+              <div className="dining-image-inner">
                 <img
                   className="image-fluid  image-right"
                   src="/images/up-42.jpg"

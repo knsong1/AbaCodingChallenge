@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Popup from './Popup';
-import { useState } from 'react';
 import ConfirmationPopup from './ConfirmationPopup';
 
 function Reservation() {
@@ -12,25 +11,212 @@ function Reservation() {
   const [pickDate, setPickDate] = useState('');
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState('');
-  const unavailableTimes = ['09:00', '12:00', '15:00', '18:00'];
 
-  const today = new Date().toISOString().split('T')[0];
-  const [minDate, setMinDate] = useState(today);
+  const daysWithDifferentTimeRestrictions = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  ];
+
+  const unavailableTimes = {
+    Monday: null,
+    Tuesday: [
+      { start: '11:00 am', end: '12:00 pm' },
+      { start: '3:00 pm', end: '4:00 pm' },
+    ],
+    Wednesday: [
+      { start: '7:00 pm', end: '8:00 pm' },
+      { start: '2:00 pm', end: '3:00 pm' },
+    ],
+    Thursday: [{ start: '3:00 pm', end: '4:00 pm' }],
+    Friday: [
+      { start: '12:00 am', end: '1:00 am' },
+      { start: '4:00 pm', end: '5:00 pm' },
+    ],
+    Saturday: [
+      { start: '11:00 am', end: '12:00 am' },
+      { start: '3:00 pm', end: '4:00 pm' },
+    ],
+    Sunday: [
+      { start: '10:00 am', end: '11:00 am' },
+      { start: '2:00 pm', end: '3:00 pm' },
+    ],
+  };
+
+  const availableTimes = {
+    Monday: [''],
+    Tuesday: [
+      '12:00 pm',
+      '1:00 pm',
+      '2:00 pm',
+      '3:00 pm',
+      '4:00 pm',
+      '5:00 pm',
+      '6:00 pm',
+      '7:00 pm',
+      '8:00 pm',
+      '9:00 pm',
+      '10:00 pm',
+    ],
+    Wednesday: [
+      '12:00 pm',
+      '1:00 pm',
+      '2:00 pm',
+      '3:00 pm',
+      '4:00 pm',
+      '5:00 pm',
+      '6:00 pm',
+      '7:00 pm',
+      '8:00 pm',
+      '9:00 pm',
+      '10:00 pm',
+    ],
+    Thursday: [
+      '12:00 pm',
+      '1:00 pm',
+      '2:00 pm',
+      '3:00 pm',
+      '4:00 pm',
+      '5:00 pm',
+      '6:00 pm',
+      '7:00 pm',
+      '8:00 pm',
+      '9:00 pm',
+      '10:00 pm',
+    ],
+    Friday: [
+      '12:00 pm',
+      '1:00 pm',
+      '2:00 pm',
+      '3:00 pm',
+      '4:00 pm',
+      '5:00 pm',
+      '6:00 pm',
+      '7:00 pm',
+      '8:00 pm',
+      '9:00 pm',
+      '10:00 pm',
+      '11:00 pm',
+      '12:00 am',
+      '1:00 am',
+    ],
+    Saturday: [
+      '11:00 am',
+      '12:00 pm',
+      '1:00 pm',
+      '2:00 pm',
+      '3:00 pm',
+      '4:00 pm',
+      '5:00 pm',
+      '6:00 pm',
+      '7:00 pm',
+      '8:00 pm',
+      '9:00 pm',
+      '10:00 pm',
+      '11:00 pm',
+      '12:00 am',
+      '1:00 am',
+    ],
+
+    Sunday: [
+      '10:00 am',
+      '11:00 am',
+      '12:00 pm',
+      '1:00 pm',
+      '2:00 pm',
+      '3:00 pm',
+      '4:00 pm',
+      '5:00 pm',
+      '6:00 pm',
+      '7:00 pm',
+      '8:00 pm',
+      '9:00 pm',
+    ],
+  };
+
+  // Initial value for minDate
+  const [minDate, setMinDate] = useState(
+    new Date().toISOString().split('T')[0]
+  );
+
+  // Handles times that are unavailble to users when they select a date in the calendar
+  // Makes users unable to select time until date is selected
+  const handleDateSelection = () => {
+    // Calculate the dayOfWeek based on pickDate
+    const selectedDate = new Date(pickDate + 'T00:00:00');
+    const dayOfWeek = selectedDate.toLocaleDateString('en-US', {
+      weekday: 'long',
+    });
+
+    if (daysWithDifferentTimeRestrictions.includes(dayOfWeek)) {
+      const availableTimesForDay = availableTimes[dayOfWeek];
+
+      // Get the unavailable times for the selected day
+      const unavailableTimesForDay = unavailableTimes[dayOfWeek];
+
+      if (unavailableTimesForDay === null) {
+        return (
+          <optgroup key={dayOfWeek} label={dayOfWeek}>
+            <option>Closed</option>
+          </optgroup>
+        );
+      }
+
+      // Filter out the unavailable times
+      const filteredTimes = availableTimesForDay.filter((timeValue) => {
+        // Check if the time is within any of the unavailable periods for the day
+        return !unavailableTimesForDay.some((unavailablePeriod) => {
+          const time = new Date(`${pickDate} ${timeValue}`);
+          const start = new Date(`${pickDate} ${unavailablePeriod.start}`);
+          const end = new Date(`${pickDate} ${unavailablePeriod.end}`);
+          return time >= start && time < end;
+        });
+      });
+
+      if (filteredTimes.length === 0) {
+        return null;
+      } else {
+        return (
+          <optgroup key={dayOfWeek}>
+            <option key={dayOfWeek} value={dayOfWeek}>
+              {dayOfWeek}
+            </option>
+            {filteredTimes.map((timeValue) => (
+              <option key={timeValue} value={timeValue}>
+                {timeValue}
+              </option>
+            ))}
+          </optgroup>
+        );
+      }
+    } else {
+      return null;
+    }
+  };
 
   const handleFormSubmit = () => {
     if (email && name && phoneNumber) {
       setConfirmationPopup(true);
       setButtonPopup(false);
     } else {
-      alert('Please fill out name, phone number and email.');
+      alert('Please fill out name, phone number, and email.');
     }
   };
 
   const handleFindTable = () => {
-    if (pickDate && time && guests <= 6) {
+    if (
+      pickDate &&
+      !daysWithDifferentTimeRestrictions.includes(time) &&
+      guests !== '' &&
+      guests <= 6
+    ) {
       setButtonPopup(true);
     } else {
-      alert('Please fill out date, time, and guest count (up to 6)');
+      alert('Please fill out date, time, and guest count (up to 6).');
     }
   };
 
@@ -42,59 +228,45 @@ function Reservation() {
       setPickDate('');
       setTime('');
       setGuests('');
+      setMinDate('');
       setConfirmationPopup(false);
     }
   };
 
   return (
-    <div className="landing-page-reservation-form-container playfair-font">
+    <div className="reservation-form-container playfair-font">
       <p className="font-large">MAKE A RESERVATION</p>
-      <form className="landing-page-reservation-form flex-display">
-        <div className="full-border ">
-          <label></label>
+      <form className="reservation-form flex-display">
+        <div className="full-border">
           <input
             value={pickDate}
             onChange={(e) => setPickDate(e.target.value)}
             type="date"
             placeholder="Date"
-            className="montserrat-font "
+            className="montserrat-font"
             min={minDate}
             required
           />
         </div>
         <div className="full-border">
-          <label></label>
-
           <select
-            className="counter "
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
+            className="counter"
+            onChange={(e) => {
+              setTime(e.target.value);
+            }}
+            disabled={!pickDate}
           >
-            {Array.from({ length: 24 }, (_, hour) => {
-              const formattedHour = hour.toString().padStart(2, '0');
-              const timeValue = `${formattedHour}:00`;
-              const isUnavailable = unavailableTimes.includes(timeValue);
-
-              return (
-                <option
-                  key={formattedHour}
-                  value={timeValue}
-                  disabled={isUnavailable}
-                >
-                  {timeValue}
-                </option>
-              );
-            })}
+            {handleDateSelection()}
           </select>
         </div>
         <div className="full-border">
-          <label></label>
           <select
             className="guest-select montserrat-font counter"
             onChange={(e) => setGuests(e.target.value)}
             value={guests}
             required
           >
+            <option value="none">Guest Count</option>
             <option value="1">1 Person</option>
             <option value="2">2 People</option>
             <option value="3">3 People</option>
@@ -104,25 +276,23 @@ function Reservation() {
           </select>
         </div>
         <div className="full-border">
-          <label></label>
           <input
             type="button"
             value="Find Table"
-            className="montserrat-font landing-page-button"
+            className="montserrat-font landing-page-button reservation"
             onClick={() => handleFindTable()}
             required
           />
         </div>
       </form>
 
-      <div className=" pop-up-container">
+      <div className="pop-up-container">
         <Popup trigger={buttonPopup}>
           <button onClick={() => setButtonPopup(false)} className="close-btn">
             X
           </button>
           <form className="">
             <div className=" ">
-              <label></label>
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -132,7 +302,6 @@ function Reservation() {
               />
             </div>
             <div className="">
-              <label></label>
               <input
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
@@ -142,7 +311,6 @@ function Reservation() {
               />
             </div>
             <div className="">
-              <label></label>
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -153,7 +321,6 @@ function Reservation() {
             </div>
 
             <div className="">
-              <label></label>
               <input
                 type="button"
                 value="Submit"
