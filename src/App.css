@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+input, select, input, a, button {
+  cursor: pointer;
+}
+
+
 /* ------- LANDING PAGE FONT ------- */
 
 .playfair-font {
@@ -32,7 +37,12 @@ padding: 0px;
     overflow: hidden;
     height: 400px; 
     align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: max-content;
   }
+
+
   
   .spacing-image {
     height: 100%;
@@ -46,7 +56,7 @@ padding: 0px;
     width: 800px;
   }
 
-  .group-dining-image .image-left {
+  .dining-image .image-left {
     height: 800px;
     width: 400px;
   }
@@ -54,7 +64,6 @@ padding: 0px;
 
   .up-47-1 {
     margin-top: -50%;
-
     margin-left: auto;
     height: auto;
     width: auto;
@@ -73,7 +82,7 @@ padding: 0px;
 
 
 
-  .group-dining-image {
+  .dining-image {
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -81,7 +90,7 @@ padding: 0px;
 
   }
 
-  .group-dining-image-inner {
+  .dining-image-inner {
     justify-content: center;
     display: flex;
     position: relative;
@@ -99,6 +108,7 @@ padding: 0px;
 
 a {
   text-decoration: none;
+
 }
 
 .margin-top-bottom {
@@ -118,6 +128,15 @@ a {
 
 .margin-right {
   margin-right: 5%;
+  
+}
+
+.header-items .margin-right li {
+
+  cursor: none;
+}
+.header-items  .margin-right {
+background-color: transparent;
 }
 
 
@@ -230,7 +249,7 @@ margin-top: 5%;
 
   .header-list li:hover {
     background-color: #aaadb2;
-    cursor: pointer;
+ 
       }
 
       .header-items .margin-right li {
@@ -240,18 +259,17 @@ margin-top: 5%;
   
   .header-items a {
     margin: auto;
-    cursor:pointer;
 
   }
 
   /* LANDING PAGE RESERVATION FORM */
 
-  .landing-page-reservation-form {
+  .reservation-form {
     padding-bottom: 15px; 
     max-width: 100%;
   }
 
-  .landing-page-reservation-form input {
+  .reservation-form input {
 width: 250px;
     border-style: none;
     text-align: center;
@@ -260,7 +278,7 @@ width: 250px;
  
   }
 
-  .landing-page-reservation-form select {
+  .reservation-form select {
  
         border-style: none;
         text-align: center;
@@ -274,20 +292,21 @@ width: 250px;
   .counter {
     width: 300px;
     text-align: center;
+
   }
 
 
 
 
 
-  .landing-page-reservation-form-button {
+  .reservation-form-button {
     background-color: #10213e;
     border: none;
     outline: none;
     color: white;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
+
     height: 100%;
     width: 25vh;
   }
@@ -299,11 +318,17 @@ width: 250px;
     color: white;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
     height: 100%;
     width: 25vh;
-    padding: 10px;
+  padding: 10px;
 
+  }
+
+  .reservation {
+    padding: 0px;
+  }
+  .landing-page-button a {
+    color: white;
   }
 
 
@@ -319,12 +344,12 @@ width: 250px;
 
 
 
-  .group-dining-content-container {
+  .content-container {
     height: 200px;
   }
 
 /* ------- LANDING PAGE FOOTER ------- */
-.landing-page-footer-container {
+.footer-container {
   bottom: 0px;
   height: 25%;
   width: 100%;
@@ -337,7 +362,7 @@ width: 250px;
 
 
 
-.landing-page-footer-background  {
+.footer-background  {
   background-image: url(/public/images/Aba-wood-1.jpg);
   background-position: right;
   background-attachment: fixed;
@@ -364,7 +389,7 @@ width: 250px;
   margin-bottom: 0px;
 }
 
-.landing-page-footer-container ul {
+.footer-container ul {
   list-style-type: none;
  margin-top: 5%;
  margin-bottom: 0px;
@@ -392,6 +417,7 @@ width: 250px;
   flex-direction: column; 
   align-items: center; 
   text-align: left;
+
 }
 
 .hours-locations-container ul {
@@ -523,7 +549,7 @@ right: 15px;
     color: white;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
+
     height: 100%;
     width: 20vh;
     padding: 10px;
@@ -535,7 +561,7 @@ right: 15px;
   /* LANDING PAGE FOOTER MEDIA QUERIES */
 
 @media only screen and (max-width: 768px) {
-  .landing-page-footer-container {
+  .footer-container {
     height: 25%;
     padding: 0;
   }
@@ -556,7 +582,7 @@ right: 15px;
     font-size: x-small;
   }
 
-  .group-dining-content-container .flex-display {
+  .content-container .flex-display {
     display: block;
   }
 
@@ -564,7 +590,7 @@ right: 15px;
     padding: 5px;
   }
 
-  .group-dining-image-inner {
+  .dining-image-inner {
     justify-content: center;
     display: flex;
     position: static;
@@ -582,7 +608,7 @@ right: 15px;
 
   }
 
-  .landing-page-reservation-form input {
+  .reservation-form input {
         width: 88px;
         border-style: none;
         text-align: center;
@@ -595,7 +621,7 @@ right: 15px;
         width: 90px;
       }
 
-      .landing-page-footer-background  {
+      .footer-background  {
        background-size: cover;
       
       }
@@ -603,7 +629,7 @@ right: 15px;
 }
 
 @media only screen and  (min-width: 786px){
-  .group-dining-image-inner {
+  .dining-image-inner {
 
     width: 350px;
   }
@@ -612,10 +638,22 @@ right: 15px;
   }
   .top-images {
     margin-top: 5%;
+    margin-left: 10px;
+    margin-right: 10px;
   }
-  .group-dining-image {
+  .dining-image {
     margin: -40px -40px -40px 0px;
     padding: 10px;
+  }
+
+}
+
+@media only screen and  (max-width: 900px) {
+  .reservation-form input {
+    width: 90px;
+  }
+  .top-images {
+    margin-top: 5%;
   }
 }
 
