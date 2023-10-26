@@ -181,9 +181,9 @@ function Reservation() {
         return null;
       } else {
         return (
-          <optgroup key={dayOfWeek}>
-            <option key={dayOfWeek} value={dayOfWeek}>
-              {dayOfWeek}
+          <optgroup key={dayOfWeek} label={dayOfWeek}>
+            <option key="placeholder" value="">
+              Select a time
             </option>
             {filteredTimes.map((timeValue) => (
               <option key={timeValue} value={timeValue}>
@@ -243,13 +243,14 @@ function Reservation() {
             onChange={(e) => setPickDate(e.target.value)}
             type="date"
             placeholder="Date"
-            className="montserrat-font"
+            className="montserrat-font counter"
             min={minDate}
             required
           />
         </div>
         <div className="full-border">
           <select
+            label
             className="counter"
             onChange={(e) => {
               setTime(e.target.value);
@@ -261,9 +262,10 @@ function Reservation() {
         </div>
         <div className="full-border">
           <select
-            className="guest-select montserrat-font counter"
+            className="guest-select montserrat-font counter font-small"
             onChange={(e) => setGuests(e.target.value)}
             value={guests}
+            aria-label="Select the number of guests"
             required
           >
             <option value="none">Guest Count</option>
@@ -279,7 +281,7 @@ function Reservation() {
           <input
             type="button"
             value="Find Table"
-            className="montserrat-font landing-page-button reservation"
+            className="montserrat-font reservation-form-button reservation"
             onClick={() => handleFindTable()}
             required
           />
@@ -324,6 +326,7 @@ function Reservation() {
               <input
                 type="button"
                 value="Submit"
+                aria-label="Submit"
                 onClick={() => {
                   handleFormSubmit();
                 }}
@@ -333,7 +336,11 @@ function Reservation() {
         </Popup>
         <ConfirmationPopup trigger={confirmationPopup}>
           <div className="popup">
-            <button onClick={() => handleCloseSubmit()} className="close-btn">
+            <button
+              aria-label="Close"
+              onClick={() => handleCloseSubmit()}
+              className="close-btn"
+            >
               X
             </button>
             <h3 className="popup-inner">Reservation submitted!</h3>

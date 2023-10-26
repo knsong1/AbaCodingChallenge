@@ -2,7 +2,7 @@ import React from 'react';
 
 function AbaFooter() {
   return (
-    <footer className="footer-background">
+    <footer className="footer-background" aria-label="Footer">
       <div className="footer-container ">
         <div className="hours-locations-container">
           <ul className="margin-space-top">
@@ -33,7 +33,7 @@ function AbaFooter() {
             </li>
 
             <li className="locations">
-              <a href="/https://maps.app.goo.gl/KjLMwxqEtmN4DBTDA">
+              <a href="/location">
                 <h3 className="playfair-font">LOCATIONS</h3>
               </a>
               <p className="margin-top-bottom montserrat-font font-medium">
@@ -46,7 +46,7 @@ function AbaFooter() {
                 Chicago, IL 60607
               </p>
               <p className="margin-top-bottom montserrat-font font-medium phone-number">
-                773-645-1400
+                <a href="tel:+7736451400">773-645-1400</a>
               </p>
             </li>
           </ul>

@@ -10,28 +10,35 @@ const LandingPage = () => {
       <AbaHeader></AbaHeader>
       <div className="top-images ">
         <div className="spacing-image ">
-          <img
-            className="image-fluid up-47-1"
-            alt="up-47.jpg"
-            src="/images/up-47.jpg"
-          ></img>
+          <picture>
+            <source srcSet="/images/up-47.webp" type="/image/webp" />
+            <img
+              className="image-fluid up-47-1"
+              alt="up-47.jpg"
+              src="/images/up-47.jpg"
+            ></img>
+          </picture>
         </div>
         <div className="spacing-image village-salad">
-          <img
-            className="image-fluid "
-            src="/images/Aba_VillageSalad.jpg"
-            alt="Aba_VillageSalad.jpg"
-          ></img>
+          <picture>
+            <source srcSet="/images/Aba_VillageSalad.webp" type="/image/webp" />
+
+            <img
+              className="image-fluid "
+              src="/images/Aba_VillageSalad.jpg"
+              alt="Aba_VillageSalad.jpg"
+            ></img>
+          </picture>
         </div>
       </div>
-      <section id="section1">
+      <section>
         <hr className="divider"></hr>
         <Reservation></Reservation>
       </section>
 
       <div className="montserrat-font bottom-line group-dining-container">
         <div className="flex-display content-container">
-          <section id="section2">
+          <section>
             <div className="display-block">
               <div>
                 <p className="font-large playfair-font">GROUP DINING AT ABA</p>
@@ -44,7 +51,7 @@ const LandingPage = () => {
                 </p>
               </div>
               <div>
-                <button className="playfair-font landing-page-button font-small">
+                <button className="playfair-font reservation-button font-small">
                   <a href="/plan-your-party">PLAN YOUR PARTY</a>
                 </button>
               </div>
@@ -85,11 +92,11 @@ const LandingPage = () => {
                   experience and embark on a journey of taste, culture, and
                   refinement.
                 </p>
-                <p>July 14, 2023 at 10:00pm</p>
+                <p className="font-medium">July 14, 2023 at 10:00pm</p>
               </div>
 
               <div>
-                <button className="playfair-font landing-page-button font-small">
+                <button className="playfair-font reservation-button font-small">
                   <a href="/wine-dinner">LEARN MORE</a>
                 </button>
               </div>
@@ -98,7 +105,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section id="section3">
+      <section>
         <div className="montserrat-font top-line group-dining-container">
           <div className="flex-display content-container">
             <div className="display-block">
@@ -107,9 +114,9 @@ const LandingPage = () => {
               </div>
               <div>
                 <p className="font-medium">
-                  Celebrating an anniversary, birthday, or new promotion at
-                  work. We provide multiple services and dishes to make your day
-                  special.
+                  Aba is a renowned Mediterranean and Middle Eastern restaurant
+                  in Chicago, offering a diverse menu of delicious dishes,
+                  creative cocktails, and a stylish ambiance.
                 </p>
               </div>
             </div>
@@ -117,7 +124,7 @@ const LandingPage = () => {
             <div className="dining-image">
               <div className="dining-image-inner">
                 <img
-                  className="image-fluid  image-right"
+                  className="image-fluid image-right"
                   src="/images/up-42.jpg"
                   alt="up-42.jpg"
                 ></img>
@@ -127,7 +134,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section id="section4">
+      <section>
         <AbaFooter></AbaFooter>
       </section>
     </div>
