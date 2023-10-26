@@ -161,7 +161,7 @@ function Reservation() {
       if (unavailableTimesForDay === null) {
         return (
           <optgroup key={dayOfWeek} label={dayOfWeek}>
-            <option>Closed</option>
+            <option disabled>Closed</option>
           </optgroup>
         );
       }
