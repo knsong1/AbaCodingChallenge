@@ -7,7 +7,7 @@ function AbaFooter() {
         <div className="hours-locations-container">
           <ul className="margin-space-top">
             <li>
-              <h3 className="playfair-font">HOURS</h3>
+              <h3 className="playfair-font margin-bottom">HOURS</h3>
               <p className="margin-top-bottom montserrat-font font-medium">
                 Tues - Thurs 12pm - 10pm
               </p>
@@ -34,7 +34,7 @@ function AbaFooter() {
 
             <li className="locations">
               <a href="/location">
-                <h3 className="playfair-font">LOCATIONS</h3>
+                <h3 className="playfair-font margin-bottom">LOCATIONS</h3>
               </a>
               <p className="margin-top-bottom montserrat-font font-medium">
                 302 N Green Street,
