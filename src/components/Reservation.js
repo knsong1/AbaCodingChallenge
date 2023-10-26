@@ -253,7 +253,6 @@ function Reservation() {
         </div>
         <div className="full-border">
           <select
-            label
             className="counter"
             onChange={(e) => {
               setTime(e.target.value);
