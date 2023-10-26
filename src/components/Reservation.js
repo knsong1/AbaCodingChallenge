@@ -9,6 +9,7 @@ function Reservation() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
   const [pickDate, setPickDate] = useState('');
+
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState('');
 
@@ -161,7 +162,9 @@ function Reservation() {
       if (unavailableTimesForDay === null) {
         return (
           <optgroup key={dayOfWeek} label={dayOfWeek}>
-            <option disabled>Closed</option>
+            <option value="" disabled>
+              Closed
+            </option>
           </optgroup>
         );
       }
@@ -210,12 +213,14 @@ function Reservation() {
 
   // Prevents users from submitting reservation for date, time, and guest count blank and sets state of Popup for name, email, and phone number
   const handleFindTable = () => {
-    if (
-      pickDate &&
-      !daysWithDifferentTimeRestrictions.includes(time) &&
-      guests !== '' &&
-      guests <= 6
-    ) {
+    const selectedDate = new Date(pickDate + 'T00:00:00');
+    const dayOfWeek = selectedDate.toLocaleDateString('en-US', {
+      weekday: 'long',
+    });
+    console.log(dayOfWeek, 'day of week');
+    if (dayOfWeek == 'Monday') {
+      alert('Sorry, we are closed on Mondays');
+    } else if (time !== '' && pickDate !== '' && guests !== '' && guests <= 6) {
       setButtonPopup(true);
     } else {
       alert('Please fill out date, time, and guest count (up to 6).');
@@ -252,6 +257,7 @@ function Reservation() {
           />
         </div>
         <div className="full-border">
+          <label for="timeSelect"> </label>
           <select
             className="counter"
             onChange={(e) => {
@@ -263,6 +269,7 @@ function Reservation() {
           </select>
         </div>
         <div className="full-border">
+          <label for="guestSelect"> </label>
           <select
             className="guest-select montserrat-font counter font-small"
             onChange={(e) => setGuests(e.target.value)}
