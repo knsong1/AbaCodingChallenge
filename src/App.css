@@ -6,7 +6,6 @@ input, select, input, a, button {
   cursor: pointer;
 }
 
-
 /* ------- LANDING PAGE FONT ------- */
 
 .playfair-font {
@@ -20,6 +19,7 @@ input, select, input, a, button {
 .display-block {
 display: block;
 padding-left: 30px;
+padding-right: 30px;
 }
 
 .inline-block {
@@ -30,25 +30,20 @@ padding: 0px;
   
   /* ------- LANDING PAGE IMAGES ------- */
   
-
-
   .top-images {
-    margin-top: 10%;
     overflow: hidden;
     height: 400px; 
     align-items: center;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 3fr;
     grid-auto-rows: max-content;
   }
 
-
-  
   .spacing-image {
     height: 100%;
     display: flex;
     overflow: hidden;
-    padding: 5px;
+    padding: 17px;
   }
 
 
@@ -63,23 +58,22 @@ padding: 0px;
 
 
   .up-47-1 {
-    margin-top: -50%;
+    margin-top: -39%;
     margin-left: auto;
     height: auto;
     width: auto;
 
   }
 
-
+  .village-salad {
+    margin: -20px;
+  }
 
   .image-fluid {
     max-width: 100%; 
     object-fit: cover;
    
   }
-
-
-
 
 
   .dining-image {
@@ -93,16 +87,19 @@ padding: 0px;
   .dining-image-inner {
     justify-content: center;
     display: flex;
-    position: relative;
+    position: static;
     height: 400px;
     width: 400px;
   }
 
-  .aba-logo-image {
-    height: 100px;
-    width: 100px;
-    
-    }
+  .dining-image-inner, .image-right {
+    height: 300px;
+    width: 300px;
+     }
+
+
+
+
 
 /* -------LANDING PAGE REUSABLE STYLES ------- */
 
@@ -125,20 +122,9 @@ a {
   justify-content: center;
 }
 
-
 .margin-right {
-  margin-right: 5%;
-  
+  margin-right: 5%;  
 }
-
-.header-items .margin-right li {
-
-  cursor: none;
-}
-.header-items  .margin-right {
-background-color: transparent;
-}
-
 
 .break-line  {
   border-top: 1px solid rgb(141, 138, 138); 
@@ -156,7 +142,7 @@ background-color: transparent;
 }
 
 .divider {
-  border: 0.01 solid #000; /* You can adjust the border style, color, and thickness as needed */
+  border: 0.01 solid #000; 
   margin: 40px;
 }
 
@@ -165,6 +151,10 @@ background-color: transparent;
   padding: 10px; 
   margin: 10%;
 
+}
+
+.font-xsmall {
+  font-size: x-small;
 }
 
 .font-small {
@@ -181,14 +171,14 @@ background-color: transparent;
 }
 
 .full-border {
-    border-top: 1px solid rgb(141, 138, 138); 
-    border-bottom: 1px solid rgb(141, 138, 138); 
-    border-left: 1px solid rgb(141, 138, 138);
+    border-top: 1px solid rgb(144, 144, 168); 
+    border-bottom: 1px solid rgb(144, 144, 168); 
+    border-left: 1px solid rgb(144, 144, 168);
     height: 3.5vh;
 }
 
 .end-of-form-border {
-  border-right: 1px solid rgb(141, 138, 138);
+  border-right: 1px solid rgb(144, 144, 168);
 
 }
 
@@ -203,66 +193,55 @@ background-color: transparent;
  
 }
 
-/* ------- LANDING PAGE HEADER ------- */
+/* ------- LANDING PAGE NAV ------- */
 
-
-.header-container {
+.nav-container {
   width: 100%;
-  padding: 0px;
   top: 0;
   left: 0;
   margin: 0px;
   border-top: 1px;
   border-width: 1px;
   border-color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-image: url(/public/images/white-wood.jpeg);
+  position: fixed;
   }
   
-  .header-container ul {
+  .nav-container ul {
     padding: 0px;
   }
+
   
-  .header-list {
+  
+  .nav-list {
     list-style: none;
-    
   }
 
-  .header-list a {
-  
-    color: #10213e;
+  .nav-list a {
+    margin: auto;
+    color: black;
   }
 
-
-  
-  .header-items {
-display: flex;
-align-items: center;
-    font-size: small;
-  padding-left: 30px; 
-  padding-right: 30px; 
-height: 20px;
-margin-top: 5%;
-
-  }
-
-
-
-
-  .header-list li:hover {
+  .nav-list li:hover {
     background-color: #aaadb2;
  
-      }
-
-      .header-items .margin-right li {
-        background-color: transparent;
-      }
-
-  
-  .header-items a {
-    margin: auto;
-
   }
 
-  /* LANDING PAGE RESERVATION FORM */
+  .nav-items {
+  display: flex;
+   align-items: center;
+   font-size: small;
+   padding-left: 30px; 
+   padding-right: 30px; 
+   height: 20px;
+   margin-top: 5%;
+   cursor: pointer;
+  }
+
+
+/* ------- LANDING PAGE RESERVATION FORM ------- */
 
   .reservation-form {
     padding-bottom: 15px; 
@@ -270,7 +249,7 @@ margin-top: 5%;
   }
 
   .reservation-form input {
-width: 250px;
+    width: 200px;
     border-style: none;
     text-align: center;
     padding: auto;
@@ -279,25 +258,21 @@ width: 250px;
   }
 
   .reservation-form select {
- 
         border-style: none;
         text-align: center;
         padding: auto;
         margin: auto;
-     
+        background-color: transparent;
+        position: static;
       }
 
 
 
   .counter {
-    width: 300px;
+    width: 200px;
     text-align: center;
 
   }
-
-
-
-
 
   .reservation-form-button {
     background-color: #10213e;
@@ -311,7 +286,7 @@ width: 250px;
     width: 25vh;
   }
 
-  .landing-page-button {
+  .reservation-button {
     background-color: #10213e;
     border: none;
     outline: none;
@@ -327,12 +302,12 @@ width: 250px;
   .reservation {
     padding: 0px;
   }
-  .landing-page-button a {
+  .reservation-button a {
     color: white;
   }
 
 
-    /* LANDING PAGE GROUP DINING */
+/* ------- LANDING PAGE GROUP DINING------- */
 
   .group-dining-container  {
     height: 200px;
@@ -341,8 +316,6 @@ width: 250px;
   .group-dining-container {
     margin-top: 10%;
   }
-
-
 
   .content-container {
     height: 200px;
@@ -357,10 +330,9 @@ width: 250px;
   margin: 0px;
   padding: 10px;
 
+
  
 }
-
-
 
 .footer-background  {
   background-image: url(/public/images/Aba-wood-1.jpg);
@@ -381,8 +353,6 @@ width: 250px;
 
 }
 
-
-
 .footer-list li {
   padding: 20px;
   padding-bottom: 0px;
@@ -402,12 +372,13 @@ width: 250px;
 
 .phone-number {
   padding-top: 20px;
+  color: white;
+}
+
+.phone-number a {
+  color: white;
 }
   
-
-
-
-
 .hours-locations-container {
   margin-left: 50%;
   margin-bottom: 10%;
@@ -441,6 +412,12 @@ padding-left: 0;
   opacity: 0.5;
   }
 
+  .aba-logo-image {
+    height: 100px;
+    width: 100px;
+    
+    }
+
 
 
 /* LANDING PAGE RESERVATION POPUP*/
@@ -466,6 +443,7 @@ padding-left: 0;
   max-width: 600px;
   background-color: white;
   border-radius: 10px;
+  background-image: url(/public/images/white-wood.jpeg);
 }
 
 .popup-inner .close-btn {
@@ -474,22 +452,16 @@ top: 10px;
 right: 15px;
 }
 
+
 /* ------- LANDING PAGE MEDIA QUERIES ---------- */
 
-/* LANDING PAGE HEADER MEDIA QUERIES */
+  /* LANDING PAGE MEDIA QUERIES max-width: 768px */
 
-@media only screen and (max-width: 786px) {
-  .header-container {
-    padding: 0;
+@media only screen and (max-width: 768px) {
 
-  }
-  .header-items a {
-    font-size: x-small;
-    padding: 0px;
-  }
   .aba-logo-image {
-    height: 40px;
-    width: 40px;
+    height: 41px;
+    width: 41px;
   }
   .aba-logo-image-2 {
     height: 42px;
@@ -497,98 +469,17 @@ right: 15px;
     padding-left: 0.5px;
     padding-top: 2px;
   }
-
-  .header-list {
-    padding: 0px;
-    margin: auto;
-  }
-
-  .header-items {
-    padding: 5px;
-
-  }
-
-  .top-line {
-    margin: 20px;
-  }
-
-  .divider {
-    margin: 20px;
-  }
-
-
-
-}
-
-
-
-/* LANDING PAGE FONT */
-
-@media only screen and (max-width: 768px) {
-  .font-large  {
-    font-size: small;
-  }
-  .font-small {
-    font-size: x-small;
-  }
-  .font-medium {
-    font-size: small;
-  }
-
-}
-
-/* LANDING PAGE BUTTONS */
-
-
-@media only screen and (max-width: 768px) {
-  .landing-page-button {
-
-    background-color: #10213e;
-    border: none;
-    outline: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-
-    height: 100%;
-    width: 20vh;
-    padding: 10px;
-  }
-
-}
-
-
-  /* LANDING PAGE FOOTER MEDIA QUERIES */
-
-@media only screen and (max-width: 768px) {
-  .footer-container {
-    height: 25%;
-    padding: 0;
-  }
-  .hours-locations-container {
-    font-size: x-small;
-
-    
-  }
-
-  .hours-locations-container p {
-    font-size: xx-small;
-  }
-  .flex-display {
-    display: flex;
-    justify-content: center;
-  }
-  .footer-list {
-    font-size: x-small;
+  
+  .bottom-line {
+    margin: 3%;
   }
 
   .content-container .flex-display {
     display: block;
   }
-
-  .footer-list li {
-    padding: 5px;
-  }
+  .counter {
+    width: 90px;
+  }  
 
   .dining-image-inner {
     justify-content: center;
@@ -599,62 +490,175 @@ right: 15px;
   
   }
 
+  .dining-image img {
+    height: 200px;
+    margin: auto;
+  }
 
+  .dining-image, .image-left {
+    margin: 0px;
+  }
 
+  .divider {
+    margin: 20px;
+  }
 
-  .top-images {
+  .font-large  {
+    font-size: small;
+  }
+  .font-small {
+    font-size: x-small;
+  }
+  .font-medium {
+    font-size: small;
+  }
 
-    height: 200px; 
+  .footer-container {
+    height: 25%;
+    padding: 0;
+  }
+
+  .footer-list {
+    font-size: x-small;
+  }
+
+  .footer-list li {
+    padding: 5px;
+  }
+
+  .footer-background  {
+    background-size: cover;
+   
+   }
+
+   .flex-display {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-container {
+    padding-bottom: 10px;
+
+  }
+  .nav-items a {
+    font-size: x-small;
+    padding: 0px;
+  }
+
+  .nav-list {
+    padding-top: 10px;
+    margin: auto;
+  }
+
+  .nav-items {
+    padding: 5px;
 
   }
 
-  .reservation-form input {
-        width: 88px;
-        border-style: none;
-        text-align: center;
-        padding: 1px;
-        margin: auto;
-     
-      }
-    
-      .counter {
-        width: 90px;
-      }
+  .hours-locations-container {
+    font-size: x-small;
 
-      .footer-background  {
-       background-size: cover;
-      
-      }
+    
+  }
+
+  .hours-locations-container p {
+    font-size: xx-small;
+  }
+
+  .image-fluid img {
+    height: 200px;
+    margin: auto;
+  }
+
+  .image-left {
+    height: 200px;
+  }
+
+  .image-left img {
+    overflow: hidden;
+    height: 500px;
+
+  }
+
+  .popup-inner {
+    width: 30%;
+  }
+
+ .reservation-form input {
+   width: 88px;
+   border-style: none;
+   text-align: center;
+   padding: 1px;
+   margin: auto;
+     
+  }
+
+  .reservation-form input {
+    width: 90px;
+  }
+
+  .spacing-image {
+    padding: 2px;
+    
+  }
+
+  .top-line {
+    margin: 20px;
+  }
+
+  .top-images {
+  height: 100px; 
+  padding: 5px;
+  margin-top: 20%;
+  }
+
+  .reservation-button {
+    background-color: #10213e;
+    border: none;
+    outline: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    height: 100%;
+    width: 20vh;
+    padding: 10px;
+  }
+
+
+  .village-salad {
+    margin: 0px;
+    padding-left: 5px;
+  }
 
 }
+
+  /* LANDING PAGE MEDIA QUERIES min-width: 768px */
 
 @media only screen and  (min-width: 786px){
   .dining-image-inner {
 
     width: 350px;
   }
-  .top-line {
-    margin: 100px;
-  }
-  .top-images {
-    margin-top: 5%;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+
   .dining-image {
     margin: -40px -40px -40px 0px;
     padding: 10px;
   }
 
+  .top-line {
+    margin: 100px;
+  }
+
+  .top-images {
+    margin-top: 15%;
+    margin-right: 10px;
+
+  }
+
 }
 
-@media only screen and  (max-width: 900px) {
-  .reservation-form input {
-    width: 90px;
-  }
-  .top-images {
-    margin-top: 5%;
-  }
-}
+
+
+
 
 
