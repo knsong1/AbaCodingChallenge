@@ -222,7 +222,7 @@ function Reservation() {
     }
   };
 
-  // Closes the reservation and confirmation popups and resets input fields to their initial state.
+  // resets input fields to their initial state and
   const handleCloseSubmit = () => {
     if (confirmationPopup) {
       setName('');
@@ -231,7 +231,7 @@ function Reservation() {
       setPickDate('');
       setTime('');
       setGuests('');
-      setMinDate('');
+      setMinDate(new Date().toISOString().split('T')[0]);
       setConfirmationPopup(false);
     }
   };
