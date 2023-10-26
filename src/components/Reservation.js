@@ -198,6 +198,7 @@ function Reservation() {
     }
   };
 
+  // Prevents users from submitting reservation blank and sets states of Popup for reservation confirmation
   const handleFormSubmit = () => {
     if (email && name && phoneNumber) {
       setConfirmationPopup(true);
@@ -207,6 +208,7 @@ function Reservation() {
     }
   };
 
+  // Prevents users from submitting reservation for date, time, and guest count blank and sets state of Popup for name, email, and phone number
   const handleFindTable = () => {
     if (
       pickDate &&
@@ -220,6 +222,7 @@ function Reservation() {
     }
   };
 
+  // Closes the reservation and confirmation popups and resets input fields to their initial state.
   const handleCloseSubmit = () => {
     if (confirmationPopup) {
       setName('');
