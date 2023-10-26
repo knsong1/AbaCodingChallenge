@@ -56,9 +56,7 @@ By optimizing these aspects of the project, I aimed to deliver a high-quality we
 
 ## Demo
 
-<video src="public/demo.mov" width="320" height="240" controls>
-  Demo of Aba Reservation Form 
-</video>
+[![Demo Video](thumbnail.mov)](./public/demo.mov)
 
 ## Color Reference
 
