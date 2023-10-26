@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Lettuce Entertain You - Coding Challenge
 
 <br/>
 <p align="center">
