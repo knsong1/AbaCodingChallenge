@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Popup(props) {
+function ReservationAlert(props) {
   return props.trigger ? (
     <div className="popup">
       <div className="popup-inner">{props.children}</div>
@@ -10,4 +10,4 @@ function Popup(props) {
   );
 }
 
-export default Popup;
+export default ReservationAlert;
